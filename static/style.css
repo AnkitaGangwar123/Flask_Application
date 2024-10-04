@@ -1,0 +1,109 @@
+/* Default setting always to do */
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #F0F1EC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Initializing the container grid */
+.container{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template: 30px repeat(2, auto) / repeat(4, auto);
+    /* gap: 1px; */
+    background-color: #F9D689;
+}
+
+.item{
+    background-color: #F0F1EC;
+    border-bottom: 2px solid #000;
+}
+
+/* .dropdown-menu{
+    list-style-type: none;
+} */
+
+h2{
+    text-align: center;
+}
+
+/* Next three selectors are for styling the table */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures borders are shared between cells */
+}
+
+th, td {
+    border: 1px solid black; /* Adds borders to each cell */
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #F9D689; /* Optional: Adds a background color to header cells */
+}
+
+form {
+    grid-area: 1/1/2/3;
+    background-color: aqua;
+    text-align: center;
+}
+
+.dbc_selector{
+    grid-area: 1/3/2/5;
+    background-color: burlywood;
+    text-align: center;
+}
+
+.parameters_table{
+
+}
+
+.cell_voltages_table{
+
+}
+
+.cell_temperatures_table{
+
+}
+
+/* Next three selectors are for battery widget */
+.battery_widget{
+    position: relative;
+    margin: 70px 50px 60px 70px;
+    width: 200px;
+    height: 100px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+    background-color: whitesmoke;
+}
+
+.battery_widget::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    right: -12px;
+    width: 12px;
+    height: 60%;
+    background-color: #333;
+    border-radius: 2px;
+}
+
+.battery_level{
+    height: 100%;
+    border-radius: 6px 0 0 6px;
+    transition: width 0.5s;
+    width: 20%;
+    background-color: green;
+}
+
+.errors_events_table{
+    grid-area: 3/1/4/5;
+    border-bottom: 2px solid #000;
+}

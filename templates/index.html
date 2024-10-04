@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>10kWh Diagnostic Tool</title>
+        <link rel="stylesheet" href="../static/style.css">
+        <link
+            href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css"
+            rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+
+            <form action="{{url_for('landing_page')}}" method="post"
+                style="background-color: aqua  ; border-bottom: 2px solid #000;">
+                <label for="baudrate">Select Baudrate:</label>
+                <select id="baudrate" name="baudrate" class="form-select">
+                    <option value="125000">125000</option>
+                    <option value="500000">500000</option>
+                    <option value="250000">250000</option>
+                </select>
+            </form>
+
+            <div class="item dbc_selector">
+                <input type="file" name="dbc_file" id="dbc_file" />
+            </div>
+
+            <div class="item parameters_table">
+                <h2>Parameters Table</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Value</th>
+                            <th>Parameter</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="parameters_table_body">
+                        <!-- {% for row in range(8) %}
+                        <tr>
+                            <td>{{parameters_col_1[row]}}</td>
+                            <td></td>
+                            <td>{{parameters_col_2[row]}}</td>
+                            <td></td>
+                        </tr>
+                        {% endfor %} -->
+                        <!-- This will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="item cell_voltages_table">
+                <h2>Voltages Table</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>CVs</th>
+                            <th>Value</th>
+                            <th>CVs</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="cell_voltages_table_body">
+                        <!-- {% for row in range(8) %}
+                        <tr>
+                            <td>{{cv_col_1[row]}}</td>
+                            <td></td>
+                            <td>{{cv_col_2[row]}}</td>
+                            <td></td>
+                        </tr>
+                        {% endfor %} -->
+                        <!-- This will be populated by JavaScript  -->
+                    </tbody>
+
+                </table>
+            </div>
+
+            <div class="item cell_temperatures_table">
+                <h2>Temp. Table</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>CTs</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cell_temperatures_table_body">
+                        <!-- {% for row in range(8) %}
+                        <tr>
+                            <td>{{ct_col_1[row]}}</td>
+                            <td></td>
+                        </tr>
+                        {% endfor %} -->
+                        <!-- This will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="item battery_widget">
+                <div class="battery_level"></div>
+            </div>
+
+            <div class="item errors_events_table">
+                <h2> Errors Events Table</h2>
+                <table>
+                    <tbody id="errors_table_body">
+                        <!-- {% for row in range(8) %}
+                        <tr>
+                            <td>{{errors_col_1[row]}}</td>
+                            <td>{{errors_col_2[row]}}</td>
+                            <td>{{errors_col_3[row]}}</td>
+                            <td>{{errors_col_4[row]}}</td>
+                            <td>{{errors_col_5[row]}}</td>
+                            <td>{{errors_col_6[row]}}</td>
+                            <td>{{errors_col_7[row]}}</td>
+                            <td>{{errors_col_8[row]}}</td>
+                        </tr>
+                        {% endfor %} -->
+                        <!-- This will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Include JS via CDN from bootstrap website -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+
+        <!-- Embed Python lists into JavaScript so that we can use them 
+             in our index.js -->
+        <script>
+            // Ensure that the variables are correctly rendered as JavaScript arrays
+            var parameters_col_1 = {{ parameters_col_1 | tojson }};
+            var parameters_col_2 = {{ parameters_col_2 | tojson }};
+
+            var cv_col_1 = {{ cv_col_1 | tojson }};
+            var cv_col_2 = {{ cv_col_2 | tojson }};
+
+            var ct_col_1 = {{ ct_col_1 | tojson }};
+
+            var errors_col_1 = {{ errors_col_1 | tojson }};
+            var errors_col_2 = {{ errors_col_2 | tojson }};
+            var errors_col_3 = {{ errors_col_3 | tojson }};
+            var errors_col_4 = {{ errors_col_4 | tojson }};
+            var errors_col_5 = {{ errors_col_5 | tojson }};
+            var errors_col_6 = {{ errors_col_6 | tojson }};
+            var errors_col_7 = {{ errors_col_7 | tojson }};
+            var errors_col_8 = {{ errors_col_8 | tojson }};
+
+        </script>
+
+        <!-- Using External JS -->
+        <script src="../static/index.js"></script>
+
+    </body>
+</html>

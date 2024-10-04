@@ -1,0 +1,864 @@
+VERSION "11"
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: TESTER VEH_SIM EXI_MEXX_BMS
+VAL_TABLE_ thrmlrunwayDTC 1 "buzzer output detected" 0 "no buzzer output" ;
+VAL_TABLE_ Thrmlrunwaysrc 3 "Both are detected" 2 "Gas sense det" 1 "Temperature sense det" 0 "no source" ;
+VAL_TABLE_ TrmlRunwaySts 3 "Not supported" 2 "No thermal runway detected" 1 "thermal runway detected" 0 "Default" ;
+VAL_TABLE_ BMS_Mode_request 2 "Limphome" 1 "Economy" 0 "Normal" ;
+VAL_TABLE_ Vehicledrivemode 5 "Limphome" 4 "Economy" 2 "Boost" 1 "Forward" ;
+VAL_TABLE_ BMS_States 8 "TESTER" 7 "SHUTDWN" 6 "ERROR" 5 "SLEEP" 4 "CHG" 3 "CHGDET" 2 "DCHG" 1 "IDLE" 0 "INIT" ;
+
+
+BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
+ SG_ E_FLT_THRMLRUNWY_TEMP : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ ERR_TRMLRNWAY_GAS : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ ERR_TRRMLRNWAY_TEMP : 0|1@1+ (1,0) [0|0] "NA" Vector__XXX
+ SG_ ERR_TRRMLRNWAY : 0|1@1+ (1,0) [0|0] "NA" Vector__XXX
+ SG_ ERR_TRMLRNWAY : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Vehicle_drivemode : 0|3@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ sigBatterychargingIndication : 0|8@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ sig_BatteryPackVoltage : 0|16@1+ (0.01,0) [0|0] "Volt" Vector__XXX
+ SG_ sigBatteryCurrent : 0|16@1- (0.1,0) [-250|250] "Amp" Vector__XXX
+ SG_ sigKiloWattHour : 0|16@1- (0.01,0) [0|0] "KWhr" Vector__XXX
+ SG_ sigAmpereHour : 0|16@1- (0.01,0) [0|0] "Ahr" Vector__XXX
+ SG_ sigTimeToCharge : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ sigBatteryTemperatureLight : 0|8@1- (1,0) [-128|127] "°C" Vector__XXX
+ SG_ sigBattFaultLight : 0|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ sigStateOfCharge : 0|8@1+ (1,0) [0|100] "%" Vector__XXX
+ SG_ sigDistanceToEmpty : 0|8@1+ (1,0) [0|255] "Kms" Vector__XXX
+ SG_ sigKeyOnSignal : 0|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ sigMinCellVoltage : 0|16@1+ (0.001,0) [0|5] "Volt" Vector__XXX
+ SG_ sigMaxCellVoltage : 0|16@1+ (0.001,0) [0|5] "Volt" Vector__XXX
+ SG_ sigBatteryCurrent : 0|16@1- (0.1,0) [-250|250] "Amp" Vector__XXX
+ SG_ sigRegenCurrentLimit : 0|8@1+ (1,0) [0|255] "Amp" Vector__XXX
+ SG_ sigDriveCurrentLimit : 0|8@1+ (1,0) [0|255] "Amp" Vector__XXX
+ SG_ sigVehicleModeRequest : 0|3@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ sigTCUCommunicationfailure : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sigPositiveBusbarHighTemperature : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sigNegativeBusbarHighTemperature : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sigBatteryInternalFailure : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sigPositiveBusbarOverTemperature : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sigNegativeBusbarOverTemperature : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sigOutputVoltageFailure : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sigLowSOCDuringKeyOn : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sigLowSOCDuringDrive : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sigBatteryLowTempertaure : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sigBattareyLowVoltage : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sigBatteryOverVoltage : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sigBatteryCutOffLowVoltage : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sigBattertLowCutOffTemperature : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sigBatteryCutOffOverVoltage : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sigBatteryHighCutoffTemperature : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sigBatteryHighTemperature : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sigBatteryFault : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sigOutputVoltValue : 0|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ sigOutputCurrentValue : 0|16@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1708 BMS_MSG_15_SID: 8 Vector__XXX
+ SG_ GIT_SHRT_SHA : 0|32@1+ (1,0) [0|4294967295] "NA" Vector__XXX
+
+BO_ 2566855770 BMS_MSG_15_EID: 8 Vector__XXX
+ SG_ GIT_SHRT_SHA : 0|32@1+ (1,0) [0|4294967295] "NA" Vector__XXX
+
+BO_ 406 CHRGR_ID: 8 Vector__XXX
+ SG_ CHRGR_ID : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 336 BMS_MSG_THERMALRUNAWAY_SID: 8 Vector__XXX
+ SG_ THRMLRUNWY_STS : 0|2@1+ (1,0) [0|3] "NA" Vector__XXX
+ SG_ THRMLRUNWY_SRC : 8|2@1+ (1,0) [0|3] "NA" Vector__XXX
+ SG_ THRMLRUNWY_LEDSTS : 24|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ THRMLRUNWY_BUZZERSTS : 16|2@1+ (1,0) [0|3] "NA" Vector__XXX
+
+BO_ 2566848608 BMS_MSG_THERMALRUNAWAY_EID: 8 Vector__XXX
+ SG_ THRMLRUNWY_STS : 0|2@1+ (1,0) [0|3] "NA" Vector__XXX
+ SG_ THRMLRUNWY_SRC : 8|2@1+ (1,0) [0|3] "NA" Vector__XXX
+ SG_ THRMLRUNWY_LEDSTS : 24|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ THRMLRUNWY_BUZZERSTS : 16|2@1+ (1,0) [0|3] "NA" Vector__XXX
+
+BO_ 939 BMS_MSG_07_SID: 8 EXI_MEXX_BMS
+ SG_ AFE2_DIETEMP : 24|8@1- (1,0) [0|0] "" Vector__XXX
+ SG_ AFE1_DIETEMP : 16|8@1- (1,0) [0|0] "" Vector__XXX
+ SG_ CB_T_02 : 48|16@1- (0.01,0) [-327.68|327.67] "°C" Vector__XXX
+ SG_ CB_T_01 : 32|16@1- (0.01,0) [-327.68|327.67] "°C" Vector__XXX
+ SG_ Cell_9_Sts : 8|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Cell_8_Sts : 7|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Cell_7_Sts : 6|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Cell_6_Sts : 5|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Cell_5_Sts : 4|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Cell_4_Sts : 3|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Cell_3_Sts : 2|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Cell_2_Sts : 1|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Cell_1_Sts : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Cell_16_Sts : 15|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Cell_15_Sts : 14|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Cell_14_Sts : 13|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Cell_13_Sts : 12|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Cell_12_Sts : 11|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Cell_11_Sts : 10|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Cell_10_Sts : 9|1@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 2566850394 BMS_MSG_07_EID: 8 EXI_MEXX_BMS
+ SG_ AFE2_DIETEMP : 24|8@1- (1,0) [0|0] "" Vector__XXX
+ SG_ AFE1_DIETEMP : 16|8@1- (1,0) [0|0] "" Vector__XXX
+ SG_ CB_T_02 : 48|16@1- (0.01,0) [-327.68|327.67] "°C" Vector__XXX
+ SG_ CB_T_01 : 32|16@1- (0.01,0) [-327.68|327.67] "°C" Vector__XXX
+ SG_ Cell_9_Sts : 8|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Cell_8_Sts : 7|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Cell_7_Sts : 6|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Cell_6_Sts : 5|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Cell_5_Sts : 4|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Cell_4_Sts : 3|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Cell_3_Sts : 2|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Cell_2_Sts : 1|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Cell_1_Sts : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Cell_16_Sts : 15|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Cell_15_Sts : 14|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Cell_14_Sts : 13|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Cell_13_Sts : 12|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Cell_12_Sts : 11|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Cell_11_Sts : 10|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Cell_10_Sts : 9|1@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 428 BMS_MSG_09_SID: 8 EXI_MEXX_BMS
+ SG_ C3 : 0|32@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ C2 : 48|16@1+ (0.01,0) [0|0] "" Vector__XXX
+ SG_ C1 : 32|16@1+ (0.01,0) [0|0] "" Vector__XXX
+
+BO_ 2566850906 BMS_MSG_09_EID: 8 EXI_MEXX_BMS
+ SG_ C2 : 48|16@1+ (0.01,0) [0|0] "" Vector__XXX
+ SG_ C1 : 32|16@1+ (0.01,0) [0|0] "" Vector__XXX
+ SG_ C3 : 0|32@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 2566850650 BMS_MSG_08_EID: 8 EXI_MEXX_BMS
+ SG_ SOH_LUT : 48|16@1+ (0.01,0) [0|0] "" Vector__XXX
+ SG_ SOH1 : 32|16@1+ (0.01,0) [0|0] "" Vector__XXX
+ SG_ Cell_Cap_b : 16|16@1+ (0.01,0) [0|0] "" Vector__XXX
+ SG_ K : 0|16@1+ (0.01,0) [0|0] "" Vector__XXX
+
+BO_ 1195 BMS_MSG_08_SID: 8 EXI_MEXX_BMS
+ SG_ SOH_LUT : 48|16@1+ (0.01,0) [0|0] "" Vector__XXX
+ SG_ SOH1 : 32|16@1+ (0.01,0) [0|0] "" Vector__XXX
+ SG_ Cell_Cap_b : 16|16@1+ (0.01,0) [0|0] "" Vector__XXX
+ SG_ K : 0|16@1+ (0.01,0) [0|0] "" Vector__XXX
+
+BO_ 2566855514 BMS_MSG_14_EID: 8 EXI_MEXX_BMS
+ SG_ BATT_CURRENT_INA : 0|16@1- (0.0625,0) [-2048|2047.9375] "A" Vector__XXX
+ SG_ MODULESTATE_SDC : 32|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ MODULESTATE_RLY : 48|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ MODULESTATE_PRT : 24|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ MODULESTATE_FLM : 28|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ MODULESTATE_EEE : 44|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ MODULESTATE_DIAG : 20|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ MODULESTATE_CAN : 16|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ MODULESTATE_AIN : 36|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ MODULESTATE_AFE : 40|4@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1452 BMS_MSG_14_SID: 8 EXI_MEXX_BMS
+ SG_ BATT_CURRENT_INA : 0|16@1- (0.0625,0) [-2048|2047.9375] "A" Vector__XXX
+ SG_ MODULESTATE_SDC : 32|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ MODULESTATE_RLY : 48|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ MODULESTATE_PRT : 24|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ MODULESTATE_FLM : 28|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ MODULESTATE_EEE : 44|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ MODULESTATE_DIAG : 20|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ MODULESTATE_CAN : 16|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ MODULESTATE_AIN : 36|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ MODULESTATE_AFE : 40|4@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 404 CHRGR_STS: 8 Vector__XXX
+ SG_ CHRGR_RDY_2_CHG : 63|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CHRGR_AUTH_FAIL : 55|1@1+ (1,0) [-1|0] "" Vector__XXX
+ SG_ CHRGR_OP_VOLT : 32|16@1+ (0.0009765,0) [0|63.9949275] "V" Vector__XXX
+ SG_ CHRGR_OP_CURRENT : 16|16@1- (0.0625,0) [-2048|2047.9375] "A" Vector__XXX
+
+BO_ 1834 BMS_MSG_12_SID: 8 EXI_MEXX_BMS
+ SG_ Timestamp_Year : 26|6@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Timestamp_Month : 22|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ TEST_RESET_CNT_FEE : 32|32@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Timestamp_sec : 0|6@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Timestamp_Min : 6|6@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Timestamp_Hr : 12|5@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Timestamp_Day : 17|5@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 2566851674 BMS_MSG_12_EID: 8 EXI_MEXX_BMS
+ SG_ Timestamp_Year : 26|6@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Timestamp_Month : 22|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ TEST_RESET_CNT_FEE : 32|32@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Timestamp_sec : 0|6@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Timestamp_Min : 6|6@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Timestamp_Hr : 12|5@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Timestamp_Day : 17|5@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 940 BMS_MSG_11_SID: 8 EXI_MEXX_BMS
+ SG_ LIFETIME_DCHG_CAP_AFE : 32|32@1+ (0.001,0) [0|4294967295] "NA" Vector__XXX
+ SG_ LIFETIME_CHG_CAP_AFE : 0|32@1+ (0.001,0) [0|4294967295] "NA" Vector__XXX
+
+BO_ 2566851418 BMS_MSG_11_EID: 8 EXI_MEXX_BMS
+ SG_ LIFETIME_DCHG_CAP_AFE : 32|32@1+ (0.001,0) [0|4294967295] "NA" Vector__XXX
+ SG_ LIFETIME_CHG_CAP_AFE : 0|32@1+ (0.001,0) [0|4294967295] "NA" Vector__XXX
+
+BO_ 684 BMS_MSG_10_SID: 8 EXI_MEXX_BMS
+ SG_ EQU_CYCLE_CNT : 48|16@1+ (0.1,0) [0|6553.5] "" Vector__XXX
+ SG_ CYC_DCHG_CAP_AFE : 16|16@1+ (0.125,0) [0|8191.875] "" Vector__XXX
+ SG_ CYC_CHG_CAP_AFE : 0|16@1+ (0.125,0) [0|8191.875] "NA" Vector__XXX
+ SG_ AVLBL_CAP_AFE : 32|16@1+ (0.125,0) [0|8191.875] "NA" Vector__XXX
+
+BO_ 2566851162 BMS_MSG_10_EID: 8 EXI_MEXX_BMS
+ SG_ EQU_CYCLE_CNT : 48|16@1+ (0.1,0) [0|6553.5] "" Vector__XXX
+ SG_ CYC_DCHG_CAP_AFE : 16|16@1+ (0.125,0) [0|8191.875] "" Vector__XXX
+ SG_ CYC_CHG_CAP_AFE : 0|16@1+ (0.125,0) [0|8191.875] "NA" Vector__XXX
+ SG_ AVLBL_CAP_AFE : 32|16@1+ (0.125,0) [0|8191.875] "NA" Vector__XXX
+
+BO_ 2566851930 BMS_MSG_13_EID: 8 EXI_MEXX_BMS
+ SG_ ERR_NTC_OPEN_WRNG : 59|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ERR_GAS_SENSOR_WARNG : 58|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ERR_TR_GAS_DELTAT_WARNG : 57|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ERR_SBCFAILWARNG : 56|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ WARN_SOPTEMP : 54|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ ERR_THRMLRUNWY_WARNG : 55|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_TR_TEMP_GAS_ERR : 52|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ERR_TR_GAS_DeltaT_ERR : 53|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ERR_CELLUNBALPF : 51|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_AFECOMTIMEOUT : 50|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_CB_SHRTOPENFAIL : 49|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ ERR_SOP : 47|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ ERR_SMFAIL : 45|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ ERR_SLEEPFAIL : 46|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ ERR_CONNECTRFAIL : 48|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ ERR_CONTWELDFAIL : 44|1@1+ (1,0) [0|0] "NA" Vector__XXX
+ SG_ WARN_EEEFAIL : 36|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ERR_PLAUSCURRENTFAIL : 37|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ERR_NTCOPEN : 43|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ ERR_ISENSEOL : 42|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ ERR_HWUV : 38|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ ERR_HWUT : 40|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ERR_HWOV : 39|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ ERR_HWOT : 41|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ ERR_OV : 0|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_AFEINITERR : 28|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_AFENONREC : 29|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_AFEREC : 30|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_BDUERROR : 31|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_CANBUSOFF : 20|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_CFETFBFAIL : 25|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_CHGOT : 5|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_CHGUT : 6|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_CONTLATCHFAIL : 13|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_DCHGOT : 3|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_DCHGUT : 4|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_DFETFBFAIL : 24|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_EOC : 9|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_EOD : 10|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_INVALIDCFG : 16|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_INVALIDTIME : 14|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_OCCP : 12|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_ODCP1 : 11|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_PGOOD : 26|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_PRECHGFAIL : 15|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_REVPOLARITY : 27|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_RTCOMMFAIL : 21|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_SCP : 8|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_SDCARDERR : 17|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_SWCFGMATCH : 19|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_SYSINIT : 22|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_UV1 : 1|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_UV2 : 2|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_VEHCHRGRAUTHFAIL : 18|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_PRECHGFBFAIL : 23|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_ODCP2 : 7|1@1+ (1,0) [0|0] "NA" Vector__XXX
+ SG_ WARN_CHG_OT : 34|1@1+ (1,0) [0|0] "NA" Vector__XXX
+ SG_ WARN_CHG_UT : 35|1@1+ (1,0) [0|0] "NA" Vector__XXX
+ SG_ WARN_DCHG_OT : 32|1@1+ (1,0) [0|0] "NA" Vector__XXX
+ SG_ WARN_DCHG_UT : 33|1@1+ (1,0) [0|0] "NA" Vector__XXX
+
+BO_ 683 BMS_MSG_06_SID: 8 EXI_MEXX_BMS
+ SG_ SW_GROUP_NO : 48|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ SW_SAP_VRSN : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ CUST_ID : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ TCU_SW_VRSN : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ BMS_DBC_VRSN : 40|8@1+ (1,0) [0|255] "NA" Vector__XXX
+ SG_ BMS_CFG_VRSN : 24|16@1+ (1,0) [0|65535] "NA" Vector__XXX
+ SG_ BMS_SW_VRSN : 16|8@1+ (1,0) [0|65535] "NA" Vector__XXX
+
+BO_ 426 BMS_MSG_01_SID: 8 EXI_MEXX_BMS
+ SG_ STS_CHG_DET : 1|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ ERR_EEEFAIL : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ ALIVE_CNT : 40|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ BMS_WAR_DET : 14|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ STS_CELLBAL : 5|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ BMS_CHRGR_AUTH : 48|16@1+ (1,0) [0|65535] "NA" Vector__XXX
+ SG_ BMS_DSHG_EN : 10|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ BMS_CHG_EN : 11|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ HV_PACK_INDICATION : 2|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ BATT_LOW : 4|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ BATT_FULL : 3|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ BMS_PF_DET : 6|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ DFET_STS : 12|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ CFET_STS : 13|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ BMS_ERR_DET : 9|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ IGN_DET : 8|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ TESTER_DET : 7|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ SDC_DET : 15|1@1+ (1,0) [0|1] "NA" Vector__XXX
+
+BO_ 1196 BMS_MSG_13_SID: 8 EXI_MEXX_BMS
+ SG_ ERR_NTC_OPEN_WRNG : 59|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ERR_GAS_SENSOR_WARNG : 58|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ERR_SBCFAILWARNG : 56|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ERR_TR_GAS_DELTAT_WARNG : 57|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ERR_THRMLRUNWY_WARNG : 55|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ WARN_SOPTEMP : 54|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ ERR_THRMLRUNWY_GAS : 53|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ERR_THRMLRUNWY_TEMP : 52|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ERR_CELLUNBALPF : 51|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_AFECOMTIMEOUT : 50|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_CB_SHRTOPENFAIL : 49|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ ERR_SOP : 47|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ ERR_SMFAIL : 45|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ ERR_SLEEPFAIL : 46|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ ERR_CONNECTRFAIL : 48|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ ERR_CONTWELDFAIL : 44|1@1+ (1,0) [0|0] "NA" Vector__XXX
+ SG_ WARN_EEEFAIL : 36|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ERR_PLAUSCURRENTFAIL : 37|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ERR_NTCOPEN : 43|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ ERR_ISENSEOL : 42|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ ERR_HWUV : 38|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ ERR_HWUT : 40|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ERR_HWOV : 39|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ ERR_HWOT : 41|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ WARN_DCHG_UT : 33|1@1+ (1,0) [0|0] "NA" Vector__XXX
+ SG_ WARN_DCHG_OT : 32|1@1+ (1,0) [0|0] "NA" Vector__XXX
+ SG_ WARN_CHG_UT : 35|1@1+ (1,0) [0|0] "NA" Vector__XXX
+ SG_ WARN_CHG_OT : 34|1@1+ (1,0) [0|0] "NA" Vector__XXX
+ SG_ ERR_ODCP2 : 7|1@1+ (1,0) [0|0] "NA" Vector__XXX
+ SG_ ERR_PRECHGFBFAIL : 23|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_VEHCHRGRAUTHFAIL : 18|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_UV2 : 2|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_UV1 : 1|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_SYSINIT : 22|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_SWCFGMATCH : 19|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_SDCARDERR : 17|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_SCP : 8|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_RTCOMMFAIL : 21|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_REVPOLARITY : 27|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_PRECHGFAIL : 15|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_PGOOD : 26|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_ODCP1 : 11|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_OCCP : 12|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_INVALIDTIME : 14|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_INVALIDCFG : 16|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_EOD : 10|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_EOC : 9|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_DFETFBFAIL : 24|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_DCHGUT : 4|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_DCHGOT : 3|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_CONTLATCHFAIL : 13|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_CHGUT : 6|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_CHGOT : 5|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_CFETFBFAIL : 25|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_CANBUSOFF : 20|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_BDUERROR : 31|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_AFEREC : 30|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_AFENONREC : 29|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_AFEINITERR : 28|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ ERR_OV : 0|1@1+ (1,0) [0|1] "NA" Vector__XXX
+
+BO_ 2566854234 BMS_MSG_CT0407_EID: 8 Vector__XXX
+ SG_ CT_08 : 48|16@1- (0.01,0) [-327.68|327.67] "°C" Vector__XXX
+ SG_ CT_07 : 32|16@1- (0.01,0) [-327.68|327.67] "°C" Vector__XXX
+ SG_ CT_06 : 16|16@1- (0.01,0) [-327.68|327.67] "°C" Vector__XXX
+ SG_ CT_05 : 0|16@1- (0.01,0) [-327.68|327.67] "°C" Vector__XXX
+
+BO_ 2566853978 BMS_MSG_CT0003_EID: 8 Vector__XXX
+ SG_ CT_04 : 48|16@1- (0.01,0) [-327.68|327.67] "°C" Vector__XXX
+ SG_ CT_03 : 32|16@1- (0.01,0) [-327.68|327.67] "°C" Vector__XXX
+ SG_ CT_02 : 16|16@1- (0.01,0) [-327.68|327.67] "°C" Vector__XXX
+ SG_ CT_01 : 0|16@1- (0.01,0) [-327.68|327.67] "°C" Vector__XXX
+
+BO_ 2566852954 BMS_MSG_CV1316_EID: 8 Vector__XXX
+ SG_ CV_16_EID : 48|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+ SG_ CV_15_EID : 32|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+ SG_ CV_14_EID : 16|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+ SG_ CV_13_EID : 0|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+
+BO_ 2566852698 BMS_MSG_CV0912_EID: 8 Vector__XXX
+ SG_ CV_12_EID : 48|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+ SG_ CV_11_EID : 32|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+ SG_ CV_10_EID : 16|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+ SG_ CV_09_EID : 0|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+
+BO_ 2566852442 BMS_MSG_CV0508_EID: 8 Vector__XXX
+ SG_ CV_08_EID : 48|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+ SG_ CV_07_EID : 32|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+ SG_ CV_06_EID : 16|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+ SG_ CV_05_EID : 0|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+
+BO_ 2566852186 BMS_MSG_CV0104_EID: 8 Vector__XXX
+ SG_ CV_04_EID : 48|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+ SG_ CV_01_EID : 0|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+ SG_ CV_03_EID : 32|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+ SG_ CV_02_EID : 16|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+
+BO_ 1032 BMS_MSG_CT0407_SID: 8 Vector__XXX
+ SG_ CT_08 : 48|16@1- (0.01,0) [-327.68|327.67] "°C" Vector__XXX
+ SG_ CT_07 : 32|16@1- (0.01,0) [-327.68|327.67] "°C" Vector__XXX
+ SG_ CT_06 : 16|16@1- (0.01,0) [-327.68|327.67] "°C" Vector__XXX
+ SG_ CT_05 : 0|16@1- (0.01,0) [-327.68|327.67] "°C" Vector__XXX
+
+BO_ 1031 BMS_MSG_CT0003_SID: 8 Vector__XXX
+ SG_ CT_04 : 48|16@1- (0.01,0) [-327.68|327.67] "°C" Vector__XXX
+ SG_ CT_03 : 32|16@1- (0.01,0) [-327.68|327.67] "°C" Vector__XXX
+ SG_ CT_02 : 16|16@1- (0.01,0) [-327.68|327.67] "°C" Vector__XXX
+ SG_ CT_01 : 0|16@1- (0.01,0) [-327.68|327.67] "°C" Vector__XXX
+
+BO_ 1027 BMS_MSG_CV1316_SID: 8 Vector__XXX
+ SG_ CV_16_SID : 48|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+ SG_ CV_15_SID : 32|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+ SG_ CV_14_SID : 16|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+ SG_ CV_13_SID : 0|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+
+BO_ 1026 BMS_MSG_CV0912_SID: 8 Vector__XXX
+ SG_ CV_12_SID : 48|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+ SG_ CV_11_SID : 32|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+ SG_ CV_10_SID : 16|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+ SG_ CV_09_SID : 0|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+
+BO_ 1025 BMS_MSG_CV0508_SID: 8 Vector__XXX
+ SG_ CV_08_SID : 48|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+ SG_ CV_07_SID : 32|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+ SG_ CV_06_SID : 16|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+ SG_ CV_05_SID : 0|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+
+BO_ 1024 BMS_MSG_CV0104_SID: 8 Vector__XXX
+ SG_ CV_01_SID : 0|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+ SG_ CV_04_SID : 48|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+ SG_ CV_03_SID : 32|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+ SG_ CV_02_SID : 16|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+
+BO_ 2566855258 BMS_MSG_SOC2_EID: 8 Vector__XXX
+ SG_ BATT_SOH_TEST : 32|16@1+ (0.01,0) [0|655.35] "%" Vector__XXX
+ SG_ BATT_SOC_TEST : 16|16@1+ (0.01,0) [0|655.35] "%" Vector__XXX
+ SG_ UKF_DLY_DSTATE : 0|16@1+ (0.01,0) [0|655.35] "%" Vector__XXX
+
+BO_ 2566855002 BMS_MSG_SOC1_EID: 8 Vector__XXX
+ SG_ DISPLAY_SOC : 32|16@1+ (0.01,0) [0|655.35] "%" Vector__XXX
+ SG_ SOC_VALUE : 16|16@1+ (0.01,0) [0|655.35] "%" Vector__XXX
+ SG_ SOC_UPPERDYNAMIC : 0|16@1+ (0.01,0) [0|1] "%" Vector__XXX
+ SG_ SOC_LOWERDYNAMIC : 48|16@1+ (0.01,0) [0|655.35] "%" Vector__XXX
+
+BO_ 1793 BMS_MSG_SOC2_SID: 8 Vector__XXX
+ SG_ BATT_SOH_TEST : 32|16@1+ (0.01,0) [0|655.35] "%" Vector__XXX
+ SG_ BATT_SOC_TEST : 16|16@1+ (0.01,0) [0|655.35] "%" Vector__XXX
+ SG_ UKF_DLY_DSTATE : 0|16@1+ (0.01,0) [0|655.35] "%" Vector__XXX
+
+BO_ 427 BMS_MSG_05_SID: 8 EXI_MEXX_BMS
+ SG_ BATT_ID_BIN : 0|64@1+ (1,0) [0|1.84467440737096E+019] "" Vector__XXX
+
+BO_ 1194 BMS_MSG_04_SID: 8 EXI_MEXX_BMS
+ SG_ MIN_CV_INDEX : 59|5@1+ (1,1) [1|32] "NA" Vector__XXX
+ SG_ MIN_CT_INDEX : 56|3@1+ (1,1) [1|8] "NA" Vector__XXX
+ SG_ MAX_CV_INDEX : 51|5@1+ (1,1) [1|32] "NA" Vector__XXX
+ SG_ MAX_CT_INDEX : 48|3@1+ (1,1) [1|8] "NA" Vector__XXX
+ SG_ MAX_CT : 40|8@1- (1,0) [-128|127] "°C" Vector__XXX
+ SG_ MIN_CT : 32|8@1- (1,0) [-128|127] "°C" Vector__XXX
+ SG_ MAX_CV : 16|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+ SG_ MIN_CV : 0|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+
+BO_ 938 BMS_MSG_03_SID: 8 EXI_MEXX_BMS
+ SG_ BATT_SOP : 48|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ MAX_DSCHG_CURRENT : 32|16@1- (0.0625,0) [-2048|2047.9375] "A" Vector__XXX
+ SG_ BMS_STATE : 56|8@1+ (1,0) [0|255] "NA" Vector__XXX
+ SG_ BATT_CURRENT_AFE : 0|16@1- (0.0625,0) [-2048|2047.9375] "Amp" Vector__XXX
+ SG_ BATT_VOLTAGE : 16|16@1+ (0.000977,0) [0|64.027695] "V" Vector__XXX
+
+BO_ 682 BMS_MSG_02_SID: 8 EXI_MEXX_BMS
+ SG_ PACK_VOLTAGE : 8|16@1+ (0.01,0) [0|655.35] "V" Vector__XXX
+ SG_ BATT_SOH : 56|8@1+ (1,0) [0|100] "%" Vector__XXX
+ SG_ MAX_CHG_VOLT : 40|16@1+ (0.000977,0) [0|64.027695] "volt" Vector__XXX
+ SG_ MAX_CHG_CURRENT : 24|16@1- (0.0625,0) [-2048|2047.9375] "A" Vector__XXX
+ SG_ BATT_SOC : 0|8@1+ (1,0) [0|100] "%" Vector__XXX
+
+BO_ 1792 BMS_MSG_SOC1_SID: 8 EXI_MEXX_BMS
+ SG_ SOC_VALUE : 16|16@1+ (0.01,0) [0|655.35] "%"  VEH_SIM
+ SG_ SOC_LOWERDYNAMIC : 48|16@1+ (0.01,0) [0|655.35] "%"  VEH_SIM
+ SG_ DISPLAY_SOC : 32|16@1+ (0.01,0) [0|655.35] "%"  VEH_SIM
+ SG_ SOC_UPPERDYMNAMIC : 0|16@1+ (0.01,0) [0|655.35] "%"  VEH_SIM
+
+BO_ 1919 BMS_TESTER_REQ: 8 TESTER
+
+BO_ 1918 BMS_TESTER_ACK: 8 EXI_MEXX_BMS
+
+BO_ 2566848858 BMS_MSG_01_EID: 8 EXI_MEXX_BMS
+ SG_ STS_CHG_DET : 1|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ ERR_EEEFAIL : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ ALIVE_CNT : 40|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ BMS_WAR_DET : 14|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ STS_CELLBAL : 5|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ BMS_CHRGR_AUTH : 48|16@1+ (1,0) [0|65535] "NA" Vector__XXX
+ SG_ BMS_DSHG_EN : 10|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ BMS_CHG_EN : 11|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ HV_PACK_INDICATION : 2|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ BATT_LOW : 4|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ BATT_FULL : 3|1@1+ (1,0) [0|1] "NA" Vector__XXX
+ SG_ BMS_PF_DET : 6|1@1+ (1,0) [0|1] "NA"  VEH_SIM
+ SG_ DFET_STS : 12|1@1+ (1,0) [0|1] "NA"  VEH_SIM
+ SG_ CFET_STS : 13|1@1+ (1,0) [0|1] "NA"  VEH_SIM
+ SG_ BMS_ERR_DET : 9|1@1+ (1,0) [0|1] "NA"  VEH_SIM
+ SG_ IGN_DET : 8|1@1+ (1,0) [0|1] "NA"  VEH_SIM
+ SG_ TESTER_DET : 7|1@1+ (1,0) [0|1] "NA"  VEH_SIM
+ SG_ SDC_DET : 15|1@1+ (1,0) [0|1] "NA"  VEH_SIM
+
+BO_ 2566850138 BMS_MSG_06_EID: 8 EXI_MEXX_BMS
+ SG_ SW_GROUP_NO : 48|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ SW_SAP_VRSN : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ CUST_ID : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ TCU_SW_VRSN : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ BMS_DBC_VRSN : 40|8@1+ (1,0) [0|255] "NA"  VEH_SIM
+ SG_ BMS_CFG_VRSN : 24|16@1+ (1,0) [0|65535] "NA"  VEH_SIM
+ SG_ BMS_SW_VRSN : 16|8@1+ (1,0) [0|65535] "NA"  VEH_SIM
+
+BO_ 2566849114 BMS_MSG_02_EID: 8 EXI_MEXX_BMS
+ SG_ PACK_VOLTAGE : 8|16@1+ (0.01,0) [0|655.35] "V" Vector__XXX
+ SG_ MAX_CHG_VOLT : 40|16@1+ (0.000977,0) [0|64.027695] "volt" Vector__XXX
+ SG_ BATT_SOC : 0|8@1+ (1,0) [0|100] "%" Vector__XXX
+ SG_ BATT_SOH : 56|8@1+ (1,0) [0|100] "%" Vector__XXX
+ SG_ MAX_CHG_CURRENT : 24|16@1- (0.0625,0) [-2048|2047.9375] "A" Vector__XXX
+
+BO_ 2566849626 BMS_MSG_04_EID: 8 EXI_MEXX_BMS
+ SG_ MIN_CV_INDEX : 59|5@1+ (1,1) [1|32] "NA"  VEH_SIM
+ SG_ MIN_CT_INDEX : 56|3@1+ (1,1) [1|8] "NA"  VEH_SIM
+ SG_ MAX_CV_INDEX : 51|5@1+ (1,1) [1|32] "NA"  VEH_SIM
+ SG_ MAX_CT_INDEX : 48|3@1+ (1,1) [1|8] "NA"  VEH_SIM
+ SG_ MIN_CV : 0|16@1+ (1,0) [0|65535] "mV"  VEH_SIM
+ SG_ MAX_CV : 16|16@1+ (1,0) [0|65535] "mV"  VEH_SIM
+ SG_ MIN_CT : 32|8@1- (1,0) [-128|127] "°C"  VEH_SIM
+ SG_ MAX_CT : 40|8@1- (1,0) [-128|127] "°C"  VEH_SIM
+
+BO_ 2566849370 BMS_MSG_03_EID: 8 EXI_MEXX_BMS
+ SG_ BATT_SOP : 48|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ MAX_DSCHG_CURRENT : 32|16@1- (0.0625,0) [-2048|2047.9375] "a" Vector__XXX
+ SG_ BATT_CURRENT_AFE : 0|16@1- (0.0625,0) [-2048|2047.9375] "A"  VEH_SIM
+ SG_ BMS_STATE : 56|8@1+ (1,0) [0|255] "NA"  VEH_SIM
+ SG_ BATT_VOLTAGE : 16|16@1+ (0.000977,0) [0|64.027695] "V"  VEH_SIM
+
+BO_ 2566849882 BMS_MSG_05_EID: 8 EXI_MEXX_BMS
+ SG_ BATT_ID_BIN : 0|64@1+ (1,0) [0|1.84467440737096E+019] "" Vector__XXX
+
+
+
+CM_ BU_ EXI_MEXX_BMS "This node represents the Battery Pack";
+CM_ BO_ 3221225472 "This is a message for not used signals, created by Vector CANdb++ DBC OLE DB Provider.";
+CM_ SG_ 426 STS_CELLBAL "0: Indicates none of the cell are being balanced
+1: Indicates at least 1 cell is being balanced";
+CM_ SG_ 426 BMS_DSHG_EN "Represents the status of BMS being able to discharge
+0: Battery pack can NOT be discharged
+1: Battery pack can be discharged";
+CM_ SG_ 426 BMS_CHG_EN "Represents the status of BMS being able to accept charge current (actual charging current OR regen current)
+0: Regen/ Charging current NOT accepted
+1: Regen/ Charging current accepted";
+CM_ SG_ 426 BATT_LOW "0: Low charge NOT detected
+1: Low charge detected";
+CM_ SG_ 426 BATT_FULL "0: Full charge NOT detected
+1: Full charge detected";
+CM_ SG_ 2566848858 STS_CELLBAL "0: Indicates none of the cell are being balanced
+1: Indicates at least 1 cell is being balanced";
+CM_ SG_ 2566848858 BMS_DSHG_EN "Represents the status of BMS being able to discharge
+0: Battery pack can NOT be discharged
+1: Battery pack can be discharged";
+CM_ SG_ 2566848858 BMS_CHG_EN "Represents the status of BMS being able to accept charge current (actual charging current OR regen current)
+0: Regen/ Charging current NOT accepted
+1: Regen/ Charging current accepted";
+CM_ SG_ 2566848858 BATT_LOW "0: Low charge NOT detected
+1: Low charge detected";
+CM_ SG_ 2566848858 BATT_FULL "0: Full charge NOT detected
+1: Full charge detected";
+BA_DEF_  "SAE_J1939_71_SpecVersion" STRING ;
+BA_DEF_  "SAE_J1939_73_SpecVersion" STRING ;
+BA_DEF_  "SAE_J1939_21_SpecVersion" STRING ;
+BA_DEF_  "SAE_J1939_75_SpecVersion" STRING ;
+BA_DEF_  "DatabaseVersion" STRING ;
+BA_DEF_  "SAE_J1939_81_SpecVersion" STRING ;
+BA_DEF_  "SAE_J1939_DA_SpecVersion" STRING ;
+BA_DEF_ BO_  "TpJ1939VarDlc" ENUM  "No","Yes";
+BA_DEF_ SG_  "SigType" ENUM  "Default","Range","RangeSigned","ASCII","Discrete","Control","ReferencePGN","DTC","StringDelimiter","StringLength","StringLengthControl","MessageCounter","MessageChecksum";
+BA_DEF_ SG_  "GenSigEVName" STRING ;
+BA_DEF_ SG_  "GenSigILSupport" ENUM  "No","Yes";
+BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic","OnWrite","OnWriteWithRepetition","OnChange","OnChangeWithRepetition","IfActive","IfActiveWithRepetition","NoSigSendType";
+BA_DEF_ BO_  "GenMsgFastOnStart" INT 0 100000;
+BA_DEF_ SG_  "GenSigInactiveValue" INT 0 0;
+BA_DEF_ BO_  "GenMsgCycleTimeFast" INT 0 3600000;
+BA_DEF_ BO_  "GenMsgNrOfRepetition" INT 0 1000000;
+BA_DEF_ SG_  "GenSigStartValue" INT 0 2147483647;
+BA_DEF_ BO_  "GenMsgDelayTime" INT 0 1000;
+BA_DEF_ BO_  "GenMsgILSupport" ENUM  "No","Yes";
+BA_DEF_ BO_  "GenMsgStartDelayTime" INT 0 100000;
+BA_DEF_ BU_  "NodeLayerModules" STRING ;
+BA_DEF_ BU_  "ECU" STRING ;
+BA_DEF_ BU_  "NmJ1939SystemInstance" INT 0 15;
+BA_DEF_ BU_  "NmJ1939System" INT 0 127;
+BA_DEF_ BU_  "NmJ1939ManufacturerCode" INT 0 2047;
+BA_DEF_ BU_  "NmJ1939IndustryGroup" INT 0 7;
+BA_DEF_ BU_  "NmJ1939IdentityNumber" INT 0 2097151;
+BA_DEF_ BU_  "NmJ1939FunctionInstance" INT 0 7;
+BA_DEF_ BU_  "NmJ1939Function" INT 0 255;
+BA_DEF_ BU_  "NmJ1939ECUInstance" INT 0 3;
+BA_DEF_ BU_  "NmJ1939AAC" INT 0 1;
+BA_DEF_ BU_  "NmStationAddress" INT 0 255;
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "cyclic","NotUsed","IfActive","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","noMsgSendType";
+BA_DEF_ BO_  "GenMsgRequestable" INT 0 1;
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 3600000;
+BA_DEF_ SG_  "SPN" INT 0 524287;
+BA_DEF_  "DBName" STRING ;
+BA_DEF_  "BusType" STRING ;
+BA_DEF_  "ProtocolType" STRING ;
+BA_DEF_ BO_  "VFrameFormat" ENUM  "StandardCAN","ExtendedCAN","reserved","J1939PG";
+BA_DEF_DEF_  "SAE_J1939_71_SpecVersion" "";
+BA_DEF_DEF_  "SAE_J1939_73_SpecVersion" "";
+BA_DEF_DEF_  "SAE_J1939_21_SpecVersion" "";
+BA_DEF_DEF_  "SAE_J1939_75_SpecVersion" "";
+BA_DEF_DEF_  "DatabaseVersion" "";
+BA_DEF_DEF_  "SAE_J1939_81_SpecVersion" "";
+BA_DEF_DEF_  "SAE_J1939_DA_SpecVersion" "";
+BA_DEF_DEF_  "TpJ1939VarDlc" "No";
+BA_DEF_DEF_  "SigType" "Default";
+BA_DEF_DEF_  "GenSigEVName" "Env@Nodename_@Signame";
+BA_DEF_DEF_  "GenSigILSupport" "Yes";
+BA_DEF_DEF_  "GenSigSendType" "NoSigSendType";
+BA_DEF_DEF_  "GenMsgFastOnStart" 0;
+BA_DEF_DEF_  "GenSigInactiveValue" 0;
+BA_DEF_DEF_  "GenMsgCycleTimeFast" 0;
+BA_DEF_DEF_  "GenMsgNrOfRepetition" 0;
+BA_DEF_DEF_  "GenSigStartValue" 0;
+BA_DEF_DEF_  "GenMsgDelayTime" 0;
+BA_DEF_DEF_  "GenMsgILSupport" "Yes";
+BA_DEF_DEF_  "GenMsgStartDelayTime" 0;
+BA_DEF_DEF_  "NodeLayerModules" "";
+BA_DEF_DEF_  "ECU" "";
+BA_DEF_DEF_  "NmJ1939SystemInstance" 0;
+BA_DEF_DEF_  "NmJ1939System" 0;
+BA_DEF_DEF_  "NmJ1939ManufacturerCode" 0;
+BA_DEF_DEF_  "NmJ1939IndustryGroup" 0;
+BA_DEF_DEF_  "NmJ1939IdentityNumber" 0;
+BA_DEF_DEF_  "NmJ1939FunctionInstance" 0;
+BA_DEF_DEF_  "NmJ1939Function" 0;
+BA_DEF_DEF_  "NmJ1939ECUInstance" 0;
+BA_DEF_DEF_  "NmJ1939AAC" 0;
+BA_DEF_DEF_  "NmStationAddress" 254;
+BA_DEF_DEF_  "GenMsgSendType" "noMsgSendType";
+BA_DEF_DEF_  "GenMsgRequestable" 1;
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_DEF_DEF_  "SPN" 0;
+BA_DEF_DEF_  "DBName" "";
+BA_DEF_DEF_  "BusType" "CAN";
+BA_DEF_DEF_  "ProtocolType" "J1939";
+BA_DEF_DEF_  "VFrameFormat" "J1939PG";
+BA_ "DBName" "MLR_10KWh_DBC_EID_V06";
+BA_ "NmStationAddress" BU_ TESTER 253;
+BA_ "NmStationAddress" BU_ VEH_SIM 208;
+BA_ "NmStationAddress" BU_ EXI_MEXX_BMS 176;
+BA_ "GenMsgCycleTime" BO_ 1708 10000;
+BA_ "VFrameFormat" BO_ 1708 0;
+BA_ "GenMsgCycleTime" BO_ 2566855770 10000;
+BA_ "VFrameFormat" BO_ 2566855770 1;
+BA_ "GenMsgCycleTime" BO_ 406 100;
+BA_ "VFrameFormat" BO_ 406 0;
+BA_ "VFrameFormat" BO_ 336 0;
+BA_ "GenMsgCycleTime" BO_ 336 100;
+BA_ "GenMsgCycleTime" BO_ 2566848608 100;
+BA_ "VFrameFormat" BO_ 2566848608 1;
+BA_ "GenMsgCycleTime" BO_ 939 1000;
+BA_ "GenMsgSendType" BO_ 939 0;
+BA_ "VFrameFormat" BO_ 939 0;
+BA_ "GenMsgCycleTime" BO_ 2566850394 1000;
+BA_ "GenMsgSendType" BO_ 2566850394 0;
+BA_ "VFrameFormat" BO_ 2566850394 1;
+BA_ "GenMsgSendType" BO_ 428 0;
+BA_ "GenMsgCycleTime" BO_ 428 1000;
+BA_ "VFrameFormat" BO_ 428 0;
+BA_ "GenMsgSendType" BO_ 2566850906 0;
+BA_ "GenMsgCycleTime" BO_ 2566850906 1000;
+BA_ "VFrameFormat" BO_ 2566850906 1;
+BA_ "GenMsgSendType" BO_ 2566850650 0;
+BA_ "GenMsgCycleTime" BO_ 2566850650 1000;
+BA_ "VFrameFormat" BO_ 2566850650 1;
+BA_ "GenMsgSendType" BO_ 1195 0;
+BA_ "GenMsgCycleTime" BO_ 1195 1000;
+BA_ "VFrameFormat" BO_ 1195 0;
+BA_ "GenMsgCycleTime" BO_ 2566855514 1000;
+BA_ "GenMsgSendType" BO_ 2566855514 0;
+BA_ "VFrameFormat" BO_ 2566855514 1;
+BA_ "GenMsgCycleTime" BO_ 1452 1000;
+BA_ "GenMsgSendType" BO_ 1452 0;
+BA_ "VFrameFormat" BO_ 1452 0;
+BA_ "VFrameFormat" BO_ 404 0;
+BA_ "GenMsgCycleTime" BO_ 1834 1000;
+BA_ "GenMsgSendType" BO_ 1834 0;
+BA_ "VFrameFormat" BO_ 1834 0;
+BA_ "GenMsgCycleTime" BO_ 2566851674 1000;
+BA_ "GenMsgSendType" BO_ 2566851674 0;
+BA_ "VFrameFormat" BO_ 2566851674 1;
+BA_ "GenMsgCycleTime" BO_ 940 10000;
+BA_ "GenMsgSendType" BO_ 940 0;
+BA_ "VFrameFormat" BO_ 940 0;
+BA_ "GenMsgCycleTime" BO_ 2566851418 10000;
+BA_ "GenMsgSendType" BO_ 2566851418 0;
+BA_ "VFrameFormat" BO_ 2566851418 1;
+BA_ "GenMsgCycleTime" BO_ 684 1000;
+BA_ "GenMsgSendType" BO_ 684 0;
+BA_ "VFrameFormat" BO_ 684 0;
+BA_ "GenMsgCycleTime" BO_ 2566851162 1000;
+BA_ "GenMsgSendType" BO_ 2566851162 0;
+BA_ "VFrameFormat" BO_ 2566851162 1;
+BA_ "VFrameFormat" BO_ 2566851930 1;
+BA_ "GenMsgCycleTime" BO_ 2566851930 1000;
+BA_ "GenMsgSendType" BO_ 2566851930 0;
+BA_ "VFrameFormat" BO_ 683 0;
+BA_ "GenMsgCycleTime" BO_ 683 10000;
+BA_ "GenMsgSendType" BO_ 683 0;
+BA_ "VFrameFormat" BO_ 426 0;
+BA_ "GenMsgCycleTime" BO_ 426 1000;
+BA_ "GenMsgSendType" BO_ 426 0;
+BA_ "GenMsgCycleTime" BO_ 1196 1000;
+BA_ "VFrameFormat" BO_ 1196 0;
+BA_ "GenMsgSendType" BO_ 1196 0;
+BA_ "GenMsgCycleTime" BO_ 2566854234 2000;
+BA_ "GenMsgSendType" BO_ 2566854234 0;
+BA_ "VFrameFormat" BO_ 2566854234 1;
+BA_ "GenMsgCycleTime" BO_ 2566853978 2000;
+BA_ "VFrameFormat" BO_ 2566853978 1;
+BA_ "GenMsgSendType" BO_ 2566853978 0;
+BA_ "GenMsgCycleTime" BO_ 2566852954 1000;
+BA_ "GenMsgSendType" BO_ 2566852954 0;
+BA_ "VFrameFormat" BO_ 2566852954 1;
+BA_ "GenMsgCycleTime" BO_ 2566852698 1000;
+BA_ "GenMsgSendType" BO_ 2566852698 0;
+BA_ "VFrameFormat" BO_ 2566852698 1;
+BA_ "GenMsgCycleTime" BO_ 2566852442 1000;
+BA_ "GenMsgSendType" BO_ 2566852442 0;
+BA_ "VFrameFormat" BO_ 2566852442 1;
+BA_ "GenMsgCycleTime" BO_ 2566852186 1000;
+BA_ "GenMsgSendType" BO_ 2566852186 0;
+BA_ "VFrameFormat" BO_ 2566852186 1;
+BA_ "GenMsgCycleTime" BO_ 1032 2000;
+BA_ "GenMsgSendType" BO_ 1032 0;
+BA_ "VFrameFormat" BO_ 1032 0;
+BA_ "GenMsgCycleTime" BO_ 1031 2000;
+BA_ "VFrameFormat" BO_ 1031 0;
+BA_ "GenMsgSendType" BO_ 1031 0;
+BA_ "GenMsgCycleTime" BO_ 1027 1000;
+BA_ "GenMsgSendType" BO_ 1027 0;
+BA_ "VFrameFormat" BO_ 1027 0;
+BA_ "GenMsgCycleTime" BO_ 1026 1000;
+BA_ "GenMsgSendType" BO_ 1026 0;
+BA_ "VFrameFormat" BO_ 1026 0;
+BA_ "GenMsgCycleTime" BO_ 1025 1000;
+BA_ "GenMsgSendType" BO_ 1025 0;
+BA_ "VFrameFormat" BO_ 1025 0;
+BA_ "GenMsgCycleTime" BO_ 1024 1000;
+BA_ "GenMsgSendType" BO_ 1024 0;
+BA_ "VFrameFormat" BO_ 1024 0;
+BA_ "GenMsgCycleTime" BO_ 2566855258 1000;
+BA_ "GenMsgSendType" BO_ 2566855258 0;
+BA_ "VFrameFormat" BO_ 2566855258 1;
+BA_ "GenMsgCycleTime" BO_ 2566855002 1000;
+BA_ "GenMsgSendType" BO_ 2566855002 0;
+BA_ "VFrameFormat" BO_ 2566855002 1;
+BA_ "GenMsgCycleTime" BO_ 1793 1000;
+BA_ "GenMsgSendType" BO_ 1793 0;
+BA_ "VFrameFormat" BO_ 1793 0;
+BA_ "VFrameFormat" BO_ 427 0;
+BA_ "GenMsgCycleTime" BO_ 427 10000;
+BA_ "GenMsgSendType" BO_ 427 0;
+BA_ "VFrameFormat" BO_ 1194 0;
+BA_ "GenMsgCycleTime" BO_ 1194 1000;
+BA_ "GenMsgSendType" BO_ 1194 0;
+BA_ "VFrameFormat" BO_ 938 0;
+BA_ "GenMsgCycleTime" BO_ 938 500;
+BA_ "GenMsgSendType" BO_ 938 0;
+BA_ "VFrameFormat" BO_ 682 0;
+BA_ "GenMsgCycleTime" BO_ 682 500;
+BA_ "GenMsgSendType" BO_ 682 0;
+BA_ "GenMsgSendType" BO_ 1792 0;
+BA_ "GenMsgCycleTime" BO_ 1792 1000;
+BA_ "VFrameFormat" BO_ 1792 0;
+BA_ "GenMsgNrOfRepetition" BO_ 1919 5;
+BA_ "GenMsgSendType" BO_ 1919 0;
+BA_ "GenMsgCycleTime" BO_ 1919 100;
+BA_ "VFrameFormat" BO_ 1919 0;
+BA_ "GenMsgNrOfRepetition" BO_ 1918 5;
+BA_ "GenMsgSendType" BO_ 1918 0;
+BA_ "GenMsgCycleTime" BO_ 1918 100;
+BA_ "VFrameFormat" BO_ 1918 0;
+BA_ "GenMsgSendType" BO_ 2566848858 0;
+BA_ "VFrameFormat" BO_ 2566848858 1;
+BA_ "GenMsgCycleTime" BO_ 2566848858 1000;
+BA_ "VFrameFormat" BO_ 2566850138 1;
+BA_ "GenMsgSendType" BO_ 2566850138 0;
+BA_ "GenMsgCycleTime" BO_ 2566850138 10000;
+BA_ "VFrameFormat" BO_ 2566849114 1;
+BA_ "GenMsgNrOfRepetition" BO_ 2566849114 5;
+BA_ "GenMsgSendType" BO_ 2566849114 0;
+BA_ "GenMsgCycleTime" BO_ 2566849114 500;
+BA_ "VFrameFormat" BO_ 2566849626 1;
+BA_ "GenMsgNrOfRepetition" BO_ 2566849626 5;
+BA_ "GenMsgSendType" BO_ 2566849626 0;
+BA_ "GenMsgCycleTime" BO_ 2566849626 1000;
+BA_ "GenMsgCycleTime" BO_ 2566849370 500;
+BA_ "GenMsgSendType" BO_ 2566849370 0;
+BA_ "VFrameFormat" BO_ 2566849370 1;
+BA_ "VFrameFormat" BO_ 2566849882 1;
+BA_ "GenMsgSendType" BO_ 2566849882 0;
+BA_ "GenMsgCycleTime" BO_ 2566849882 10000;
+BA_ "GenSigStartValue" SG_ 1194 MAX_CV_INDEX 0;
+BA_ "GenSigStartValue" SG_ 1194 MAX_CT_INDEX 0;
+BA_ "GenSigStartValue" SG_ 1194 MAX_CT 1;
+BA_ "GenSigStartValue" SG_ 1194 MIN_CT 1;
+BA_ "GenSigStartValue" SG_ 2566849626 MAX_CV_INDEX 0;
+BA_ "GenSigStartValue" SG_ 2566849626 MAX_CT_INDEX 0;
+BA_ "GenSigStartValue" SG_ 2566849626 MIN_CT 1;
+BA_ "GenSigStartValue" SG_ 2566849626 MAX_CT 1;
+VAL_ 3221225472 Vehicle_drivemode 5 "Limphome" 4 "Economy" 2 "Boost" 1 "Forward" ;
+VAL_ 3221225472 sigVehicleModeRequest 2 "Limphome" 1 "Economy" 0 "Normal" ;
+VAL_ 336 THRMLRUNWY_STS 3 "Not supported" 2 "No thermal runway detected" 1 "thermal runway detected" 0 "Default" ;
+VAL_ 336 THRMLRUNWY_SRC 3 "Both are detected" 2 "Gas sense det" 1 "Temperature sense det" 0 "no source" ;
+VAL_ 336 THRMLRUNWY_LEDSTS 1 "buzzer output detected" 0 "no buzzer output" ;
+VAL_ 336 THRMLRUNWY_BUZZERSTS 1 "buzzer output detected" 0 "no buzzer output" ;
+VAL_ 2566848608 THRMLRUNWY_STS 3 "Not supported" 2 "No thermal runway detected" 1 "thermal runway detected" 0 "Default" ;
+VAL_ 2566848608 THRMLRUNWY_SRC 3 "Both are detected" 2 "Gas sense det" 1 "Temperature sense det" 0 "no source" ;
+VAL_ 2566848608 THRMLRUNWY_LEDSTS 1 "buzzer output detected" 0 "no buzzer output" ;
+VAL_ 2566848608 THRMLRUNWY_BUZZERSTS 1 "buzzer output detected" 0 "no buzzer output" ;
+VAL_ 938 BMS_STATE 8 "TESTER" 7 "SHUTDWN" 6 "ERROR" 5 "SLEEP" 4 "CHG" 3 "CHGDET" 2 "DCHG" 1 "IDLE" 0 "INIT" ;
+VAL_ 2566849370 BMS_STATE 8 "TESTER" 7 "SHUTDWN" 6 "ERROR" 5 "SLEEP" 4 "CHG" 3 "CHGDET" 2 "DCHG" 1 "IDLE" 0 "INIT" ;
+

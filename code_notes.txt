@@ -1,0 +1,25 @@
+Flask: Python Web Framework for building web applications using Python as the backend-language.
+
+Jinja2: Templating Engine for Python widely used for rendering HTML/XML files with dynamic data.
+
+Have to very deeply understand:
+Directories structure for making the application else errors won't go away
+
+Steps:
+1. Change the table format from HTML table format to jinja2 template format (this makes the code very short): (Done)
+
+2. Manually hard coded the battery parameters values in each table cell accordingly. (Done)
+
+3. Trying to insert the battery parameters values in each table cell by parsing the DBC file.(Done)
+
+4. Make a separate .py file for parcing the dbc and then use it inside controllers.py by importing (Done)
+
+5. read_can.py -> controllers.py -> index.html -> index.js (Control Flow of the scripts; very very imp.)
+
+6. Always have to run app.py script
+
+7. Added dropdown for baudrate selection and input tag as a file for dbc selection.(Done)
+
+8. Functionality to load the tables with parameters and data both only after dbc file has been selected.(Done)
+
+9. 
